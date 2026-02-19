@@ -7,7 +7,7 @@ import socket
 import threading
 import sys
 
-HOST = sys.argv[1] if len(sys.argv) > 1 else '127.0.0.1'
+HOST = sys.argv[1] if len(sys.argv) > 1 else '::1'
 PORT = int(sys.argv[2]) if len(sys.argv) > 2 else 5555
 
 
@@ -27,10 +27,12 @@ def receive_messages(sock):
 
 
 def main():
-    sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+    info = socket.getaddrinfo(HOST, PORT, socket.AF_UNSPEC, socket.SOCK_STREAM)
+    family, socktype, proto,canonname, sockaddr = info[0]
+    sock = socket.socket(family, socktype)
 
     try:
-        sock.connect((HOST, PORT, 0, 0))
+        sock.connect(sockaddr)
     except ConnectionRefusedError:
         print(f"[!] Impossible de se connecter à {HOST}:{PORT}")
         print("    Vérifiez que le serveur est bien démarré.")
