@@ -27,10 +27,10 @@ def receive_messages(sock):
 
 
 def main():
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
 
     try:
-        sock.connect((HOST, PORT))
+        sock.connect((HOST, PORT, 0, 0))
     except ConnectionRefusedError:
         print(f"[!] Impossible de se connecter à {HOST}:{PORT}")
         print("    Vérifiez que le serveur est bien démarré.")

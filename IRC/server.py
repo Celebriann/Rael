@@ -6,7 +6,7 @@ Commandes supportées : /nick, /join, /leave, /list, /msg, /quit, /help
 import socket
 import threading
 
-HOST = '0.0.0.0'
+HOST = '::'
 PORT = 5555
 
 clients = {}   # socket -> {nick, channel}
@@ -218,7 +218,7 @@ def disconnect(sock):
 
 
 def main():
-    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
     server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     server.bind((HOST, PORT))
     server.listen()
