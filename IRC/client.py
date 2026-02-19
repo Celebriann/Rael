@@ -621,8 +621,8 @@ def main():
     print(f"[*] (La connexion peut prendre quelques secondes)")
 
     try:
+        raw_sock.connect((HOST, PORT))
         main_sock = ssl_ctx.wrap_socket(raw_sock, server_hostname="chat-server")
-        main_sock.connect((HOST, PORT))
     except Exception as e:
         print(f"[!] Impossible de se connecter : {e}")
         sys.exit(1)
