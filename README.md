@@ -3,7 +3,7 @@
   <body>
     <h4>Pour l'instant seul linux a été testé</h4>
     <h1>DESCRIPTION</h1>
-    <p>Un petit chat chiffré, il y a un historique de message dans les channels, celui si est stocké sur la machine du créateur. </br>Les mp ne sont pas enregistrés</p>
+    <p>Un petit chat chiffré, il y a un historique de message dans les channels (à partir de la V1.3), celui si est stocké sur la machine du créateur. </br>Les mp ne sont pas enregistrés</p>
     <h1>INSTALLATION</h1>
     <p>Installer Tor</p>
     <p>Installer python3</p>
