@@ -23,6 +23,8 @@
         </ul>
       </li>
     </ul>
-    
+    <h1>INSTRUCTIONS</h1>
+    <p>Lors du premier lancement du serveur cela va générer un fichier "server.crt", ce fichier doit aussi être présent à côté des clients</p>
+    <p>Les données de votre profil sont stockés dans un dossier "user.json" sur la machine cliente</p>
   </body>
 </html>
