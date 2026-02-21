@@ -636,9 +636,10 @@ def connect_and_start(nick: str, pwd: str, bio=None):
 
     # Authentification
     time.sleep(0.3)
+    # Separateur | pour eviter conflit avec les : dans le hash
     auth_msg = (
-        f"__AUTH__{data['nick']}:{data['password_hash_send']}:"
-        f"{data.get('created_at', '')}:{data.get('bio', '')}"
+        f"__AUTH__{data['nick']}|{data['password_hash_send']}|"
+        f"{data.get('created_at', '')}|{data.get('bio', '')}"
     )
     main_sock.sendall((auth_msg + "\n").encode())
 

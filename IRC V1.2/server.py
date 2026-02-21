@@ -375,7 +375,7 @@ def handle_message(sock, message):
 
     if message.startswith("__AUTH__"):
         try:
-            parts = message[8:].split(":", 3)
+            parts = message[8:].split("|", 3)
             a_nick = parts[0]
             a_hash = parts[1]
             a_created = parts[2]
@@ -669,7 +669,7 @@ def main():
     raw_server.listen()
 
     print(f"\n{'='*50}")
-    print(f"[*] Serveur demarre sur {HOST}:{PORT} en version 1.1")
+    print(f"[*] Serveur demarre sur {HOST}:{PORT}")
     print(f"[*] TLS 1.3 + E2E actifs")
     if onion:
         print(f"[*] Adresse .onion : {onion}")

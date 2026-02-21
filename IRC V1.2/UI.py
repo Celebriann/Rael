@@ -244,7 +244,7 @@ class AuthScreen(Screen):
     def compose(self) -> ComposeResult:
         with Container(id="auth_container"):
             with Vertical(id="auth_box"):
-                yield Label("◈  RAEL  ◈ Version 1.2", id="auth_title")
+                yield Label("◈  IRC SÉCURISÉ  ◈", id="auth_title")
                 yield Label("Tor · TLS 1.3 · E2E RSA+AES", id="auth_subtitle")
                 yield Label("Pseudo", classes="auth_label")
                 yield Input(placeholder="votre_pseudo", id="nick_input", classes="auth_input")
